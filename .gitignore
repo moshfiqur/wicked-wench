@@ -1,2 +1,7 @@
 .DS_Store
 venv/*
+images/*
+*/images/*
+*/model/*
+*/*.tar.gz
+*/*.pb
