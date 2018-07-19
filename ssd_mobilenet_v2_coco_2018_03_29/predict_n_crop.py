@@ -47,20 +47,10 @@ TF_MODEL_PATH = str(StringIO(args.tf_model_path).getvalue())
 TF_RESEARCH_PATH = str(StringIO(args.tf_research_path).getvalue())
 LABEL_PATH = str(StringIO(args.label_path).getvalue())
 
-# ROOT_PATH = '/Users/moshfiqur/Learning/machine-learning/object-detection-playground'
-# DATA_PATH = os.path.join(ROOT_PATH, 'data')
-# TF_MODELS_PATH = '/Users/moshfiqur/Learning/machine-learning/tf-models/models'
-# TEST_IMAGES_PATH = '/Users/moshfiqur/Learning/machine-learning/object-detection-playground/images'
-
 # This is needed since the notebook is stored in the object_detection folder.
 # sys.path.append(os.path.join(TF_MODELS_PATH, 'research'))
 sys.path.append(TF_RESEARCH_PATH)
 sys.path.append(os.path.join(TF_RESEARCH_PATH, 'object_detection'))
-# sys.path.append(ROOT_PATH)
-
-# print(sys.path)
-
-# print(tf.__version__)
 
 if tf.__version__ < '1.5.0':
     raise ImportError('Please upgrade your tensorflow installation to v1.5.* or later!')
