@@ -3,3 +3,4 @@ contextlib2
 pillow
 lxml
 matplotlib
+opencv-python

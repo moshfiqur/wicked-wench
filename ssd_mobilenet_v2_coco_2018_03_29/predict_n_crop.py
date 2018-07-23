@@ -1,10 +1,6 @@
 '''
 Sample run command:
-python predict_n_crop.py \
-    --image '../images/mobile_1.jpg' \
-    --tf-model 'model' \
-    --tf-research '/Users/sparrow/Learning/machine-learning/tensorflow-models-zoo/research' \
-    --label-path '../data'
+python predict_n_crop.py --image '../images/mobile_1.jpg' --tf-model 'model' --tf-research '/Users/sparrow/Learning/machine-learning/tensorflow-models-zoo/research' --label-path '../data'
 '''
 
 import numpy as np
@@ -61,7 +57,6 @@ from utils import visualization_utils as vis_util
 
 # What model to download.
 MODEL_NAME = 'ssd_mobilenet_v2_coco_2018_03_29'
-MODEL_FILE = os.path.join(TF_MODEL_PATH, MODEL_NAME + '.tar.gz')
 
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
 MODEL_CKPT_PATH = os.path.join(MODEL_NAME + '/frozen_inference_graph.pb')
@@ -70,13 +65,6 @@ MODEL_CKPT_PATH = os.path.join(MODEL_NAME + '/frozen_inference_graph.pb')
 LABEL_FILE = os.path.join(LABEL_PATH, 'mscoco_label_map.pbtxt')
 
 NUM_CLASSES = 90
-
-# Extract the model file to get the frozen detection graph in it
-tar_file = tarfile.open(MODEL_FILE)
-for file in tar_file.getmembers():
-    file_name = os.path.basename(file.name)
-    if 'frozen_inference_graph.pb' in file_name:
-        tar_file.extract(file, os.getcwd())
 
 # Initialize the graph
 detection_graph = tf.Graph()
