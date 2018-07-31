@@ -6,5 +6,4 @@ images/*
 */*.tar.gz
 */*.pb
 deep-fashion/in-shop-clothes-retrieval/data/*
-deep-fashion/in-shop-clothes-retrieval/models/*
 deep-fashion/in-shop-clothes-retrieval/.ipynb_checkpoints/*
