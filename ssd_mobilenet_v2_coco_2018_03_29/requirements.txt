@@ -4,3 +4,4 @@ pillow
 lxml
 matplotlib
 opencv-python
+opencv-contrib-python
