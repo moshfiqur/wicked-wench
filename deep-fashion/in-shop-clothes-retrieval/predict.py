@@ -5,6 +5,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
 import sys
 
+gender = 'women'
+
 # change this as you see fit
 image_path = sys.argv[1]
 
@@ -13,10 +15,10 @@ image_data = tf.gfile.FastGFile(image_path, 'rb').read()
 
 # Loads label file, strips off carriage return
 label_lines = [line.rstrip() for line
-               in tf.gfile.GFile("./models/retrained_labels.txt")]
+               in tf.gfile.GFile("./models/retrained_labels_"+gender+".txt")]
 
 # Unpersists graph from file
-with tf.gfile.FastGFile("./models/retrained_graph.pb", 'rb') as f:
+with tf.gfile.FastGFile("./models/retrained_graph_"+gender+".pb", 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')

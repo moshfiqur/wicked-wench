@@ -1,0 +1,9 @@
+denim
+jackets vests
+pants
+shirts polos
+shorts
+suiting
+sweaters
+sweatshirts hoodies
+tees tanks
